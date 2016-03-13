@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto_HADS", "Proyecto_HADS\Proyecto_HADS.csproj", "{28E28958-F9E1-4462-B3E3-F8C7B9C2FB0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{66096060-37DA-4303-83B3-282F0D134966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnvioMail", "EnvioMail\EnvioMail.csproj", "{DCE7F9AA-F131-41EC-960F-B8A42B0657D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28E28958-F9E1-4462-B3E3-F8C7B9C2FB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E28958-F9E1-4462-B3E3-F8C7B9C2FB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E28958-F9E1-4462-B3E3-F8C7B9C2FB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E28958-F9E1-4462-B3E3-F8C7B9C2FB0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66096060-37DA-4303-83B3-282F0D134966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66096060-37DA-4303-83B3-282F0D134966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66096060-37DA-4303-83B3-282F0D134966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66096060-37DA-4303-83B3-282F0D134966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCE7F9AA-F131-41EC-960F-B8A42B0657D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE7F9AA-F131-41EC-960F-B8A42B0657D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE7F9AA-F131-41EC-960F-B8A42B0657D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE7F9AA-F131-41EC-960F-B8A42B0657D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
