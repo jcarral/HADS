@@ -18,7 +18,7 @@ namespace Proyecto_HADS
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=tcp:hads19.database.windows.net,1433;Initial Catalog=Users;User ID=hads19@hads19;Password="******);
+            SqlConnection conn = new SqlConnection("Data Source=tcp:hads19.database.windows.net,1433;Initial Catalog=Users;User ID=hads19@hads19;Password=Serpiente19");
             Session["conexion"] = conn;
             Application.Lock();
             int ns = (int) Application.Contents["numerosocios"] + 1;

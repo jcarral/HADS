@@ -12,7 +12,6 @@ namespace Proyecto_HADS
     public partial class TareasAlumno : System.Web.UI.Page
     {
         DataSet dstDDL;
-        DataSet dstGV;
         DataView dvGV;
         DataTable dtGV;
         SqlConnection conn;

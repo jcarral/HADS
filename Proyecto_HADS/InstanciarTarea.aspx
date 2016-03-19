@@ -18,7 +18,7 @@
     <form id="form1" runat="server">
         <uc1:header runat="server" ID="header" />
         <div class="hidden" role="alert" id="divError" runat="server"><strong>Error:</strong> Los datos están duplicados</div>
-        <div class="hidden" role="alert" id="divOk" runat="server">La tarea se ha almacenado correctamente.</div>
+        <div class="hidden" role="alert" id="divOk" runat="server">El documento se ha importado correctamente.</div>
     <div>
         
         

@@ -16,7 +16,7 @@ namespace AccesoDatos
         {
             try
             {
-                conexion.ConnectionString = "Data Source=tcp:hads19.database.windows.net,1433;Initial Catalog=Users;User ID=hads19@hads19;Password="*******";
+                conexion.ConnectionString = "Data Source=tcp:hads19.database.windows.net,1433;Initial Catalog=Users;User ID=hads19@hads19;Password=Serpiente19";
                 conexion.Open();
                 return "Conexión OK";
             }catch(Exception ex){
