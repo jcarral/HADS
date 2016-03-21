@@ -89,6 +89,7 @@ namespace Proyecto_HADS
                 SqlCommandBuilder cb = new SqlCommandBuilder(adapter);
                 adapter.UpdateCommand = cb.GetUpdateCommand();
                 adapter.Update(table);
+                
                 divOk.Attributes["class"] = "alert alert-success";
                 divError.Attributes["class"] = "hidden";
             }catch(Exception ex){

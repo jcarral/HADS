@@ -68,6 +68,7 @@
     <Content Include="ExportarTareas.aspx" />
     <Content Include="Global.asax" />
     <Content Include="header.ascx" />
+    <Content Include="ImportarTareasDS.aspx" />
     <Content Include="ImportarTareasXML.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="InsertarTarea.aspx" />
@@ -125,6 +126,13 @@
     </Compile>
     <Compile Include="header.ascx.designer.cs">
       <DependentUpon>header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarTareasDS.aspx.cs">
+      <DependentUpon>ImportarTareasDS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportarTareasDS.aspx.designer.cs">
+      <DependentUpon>ImportarTareasDS.aspx</DependentUpon>
     </Compile>
     <Compile Include="ImportarTareasXML.aspx.cs">
       <DependentUpon>ImportarTareasXML.aspx</DependentUpon>
@@ -203,7 +211,9 @@
     <None Include="App_Data\tareas.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\hads19 - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\hads19 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hads19 - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\hads19 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
