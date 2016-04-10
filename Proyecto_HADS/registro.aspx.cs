@@ -46,6 +46,8 @@ namespace Proyecto_HADS
             datos.Add("pregunta", tbRegPregunta.Text);
             datos.Add("respuesta", tbRegRespuesta.Text);
             datos.Add("dni", tbRegDNI.Text);
+            datos.Add("tipo", (rdAlumno.Checked)? "A":"P");
+            datos.Add("grupo", (rdAlumno.Checked) ? tbGrupo.Text : null);
 
             if (acceso.crearUsuario(datos))
             {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace AccesoDatos
 {
@@ -32,15 +33,17 @@ namespace AccesoDatos
         public Boolean crearUsuario(Dictionary<string, string> datos)
         {
             
-                string sentenciaSQL = "Insert into Usuarios values(@correo, @nombre, @pregunta, @respuesta, @dni,'false', @grupo, @tipo, @pass);";
+                string sentenciaSQL = "Insert into Usuarios values(@correo, @nombre, @pregunta, @respuesta, @dni,'true', @grupo, @tipo, @pass);";
+                string passCifrada = cifrar(datos["pass"]);
                 comando = new SqlCommand(sentenciaSQL, conexion);
                 comando.Parameters.Add("@correo", datos["correo"]);
                 comando.Parameters.Add("@nombre", datos["nombre"]);
-                comando.Parameters.Add("@pass", datos["pass"]);
-                comando.Parameters.Add("@codigo", datos["tipo"]);
+                comando.Parameters.Add("@pass", passCifrada);
+                comando.Parameters.Add("@tipo", datos["tipo"]);
                 comando.Parameters.Add("@pregunta", datos["pregunta"]);
                 comando.Parameters.Add("@respuesta", datos["respuesta"]);
                 comando.Parameters.Add("@dni", datos["dni"]);
+                comando.Parameters.Add("@grupo", datos["grupo"]);
 
                 try
                 {
@@ -54,6 +57,13 @@ namespace AccesoDatos
                 }
          }
 
+        private string cifrar(string pass)
+        {
+            byte[] datos = Encoding.ASCII.GetBytes(pass);
+            datos = new SHA256Managed().ComputeHash(datos);
+            string cifrado = Encoding.ASCII.GetString(datos);
+            return cifrado;
+        }
         public Boolean validarRegistro(string mail, int codigo)
         {
             string query = "Select count(*) from Users WHERE correo=@mail and codigo=@codigo and Validado='false'";
@@ -118,18 +128,23 @@ namespace AccesoDatos
 
         public int validUser(string mail, string pass)
         {
-            string query = "Select tipo from Usuarios WHERE email=@mail and pass=@pass and confirmado='true';";
+            string query = "Select tipo, pass from Usuarios WHERE email=@mail and confirmado='true';";
             comando = new SqlCommand(query, conexion);
             comando.Parameters.Add("@mail", mail);
-            comando.Parameters.Add("@pass", pass);
+            
             SqlDataReader data;
             try
             {
                 data = comando.ExecuteReader();
                 data.Read();
-                if (((string) data["tipo"]).Equals("P")) return 1; //Profesor
-                else if (((string) data["tipo"]).Equals("A")) return 2; //Alumno
-                else return 0; //Error
+                if (cifrar(pass).Equals(data["pass"]))
+                {
+                    if (((string)data["tipo"]).Equals("P")) return 1; //Profesor
+                    else if (((string)data["tipo"]).Equals("A")) return 2; //Alumno
+                    else return 0; //Error
+                }
+                return 0;
+                
             }
             catch (Exception e)
             {

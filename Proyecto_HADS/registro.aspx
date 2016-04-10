@@ -67,6 +67,13 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="tbRegRespuesta" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
         </div>
             <br />
+            <asp:Label ID="Label9" runat="server" Text="Tipo: "></asp:Label>
+            <asp:RadioButton ID="rdAlumno" runat="server" Checked="True" GroupName="radiosTipo" Text="Alumno" />
+            <asp:RadioButton ID="rdProfesor" runat="server" Text="Profesor" ValidationGroup="radiosTipo" />
+            <br />
+            <asp:Label ID="Label10" runat="server" Text="Grupo: "></asp:Label>
+            <asp:TextBox ID="tbGrupo" runat="server" TextMode="Number" Width="52px"></asp:TextBox>
+            <br />
         <asp:HyperLink ID="hyReg" runat="server" ForeColor="#00CC00">_</asp:HyperLink>
         <br />
         <asp:Button ID="Button1" runat="server" Text="Registrarse!" OnClick="Button1_Click" />
