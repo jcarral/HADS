@@ -30,7 +30,7 @@ namespace AccesoDatos
             conexion.Close();
         }
 
-        public Boolean crearUsuario(Dictionary<string, string> datos)
+        public string crearUsuario(Dictionary<string, string> datos)
         {
             
                 string sentenciaSQL = "Insert into Usuarios values(@correo, @nombre, @pregunta, @respuesta, @dni,'true', @grupo, @tipo, @pass);";
@@ -48,12 +48,11 @@ namespace AccesoDatos
                 try
                 {
                     comando.ExecuteNonQuery();
-                    return true;
+                    return null;
                 }
                 catch (Exception e)
                 {
-                    
-                    return false;
+                    return e.Message + ". ";
                 }
          }
 

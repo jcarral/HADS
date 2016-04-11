@@ -13,7 +13,7 @@ namespace Proyecto_HADS
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            validConexion();
+            
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -21,10 +21,5 @@ namespace Proyecto_HADS
 
         }
 
-        protected void validConexion()
-        {
-            if (Session["correo"] == null || !Session["tipo"].Equals("P"))
-                Response.Redirect("Inicio.aspx");
-        }
     }
 }

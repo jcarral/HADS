@@ -34,13 +34,13 @@ namespace Proyecto_HADS
             {
                 Session["correo"] = tbLogInCorreo.Text;
                 Session["tipo"] = "P";
-                Response.Redirect("Profesor.aspx");
+                Response.Redirect("profesor/Profesor.aspx");
             }
             else if (tipo == ALUMNO)
             {
                 Session["correo"] = tbLogInCorreo.Text;
                 Session["tipo"] = "A";
-                Response.Redirect("Alumno.aspx");
+                Response.Redirect("alumno/Alumno.aspx");
             }
             else
             {

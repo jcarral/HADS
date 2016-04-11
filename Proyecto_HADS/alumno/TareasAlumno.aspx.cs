@@ -18,7 +18,7 @@ namespace Proyecto_HADS
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            validConexion();
+            
             conn = (SqlConnection)Session["conexion"];
             string query = "Select Asi.Nombre, Asi.codigo FROM (Asignaturas as Asi inner join GruposClase as GC on Asi.codigo = GC.codigoasig) inner join EstudiantesGrupo as EG on EG.Grupo = GC.codigo WHERE EG.Email='" + Session["correo"] + "';";
             string queryTareas = "Select * FROM TareasGenericas";
@@ -72,13 +72,6 @@ namespace Proyecto_HADS
         {
             dvGV.Sort = e.SortExpression;
         }
-
-        protected void validConexion()
-        {
-            if (Session["correo"] == null || !Session["tipo"].Equals("A"))
-                Response.Redirect("Inicio.aspx");
-        }
-
 
         
     }

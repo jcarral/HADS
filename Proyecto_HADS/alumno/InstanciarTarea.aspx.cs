@@ -17,7 +17,7 @@ namespace Proyecto_HADS
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            validConexion();
+            
             SqlConnection conn = (SqlConnection)Session["conexion"];
             string query = "Select * FROM EstudiantesTareas WHERE Email='" + Session["correo"] + "';";
             tbUsuario.Text = (string) Session["correo"];
@@ -74,11 +74,7 @@ namespace Proyecto_HADS
             }
         }
 
-        protected void validConexion()
-        {
-            if (Session["correo"] == null || !Session["tipo"].Equals("A"))
-                Response.Redirect("Inicio.aspx");
-        }
+       
 
     }
 }

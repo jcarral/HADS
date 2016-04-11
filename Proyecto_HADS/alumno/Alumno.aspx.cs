@@ -12,15 +12,10 @@ namespace Proyecto_HADS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            validConexion();
+            
         }
 
-        protected void validConexion()
-        {
-            
-            if (Session["correo"] == null || !((string)Session["tipo"]).Equals("A"))
-                Response.Redirect("Inicio.aspx");
-        }
+        
 
     }
 }

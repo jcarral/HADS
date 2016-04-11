@@ -24,7 +24,7 @@ namespace Proyecto_HADS
         protected void Button1_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("Inicio.aspx");
+            Response.Redirect("~/Inicio.aspx");
         }
 
        

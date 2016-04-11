@@ -13,7 +13,7 @@ namespace Proyecto_HADS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            validConexion();
+            
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
@@ -42,12 +42,6 @@ namespace Proyecto_HADS
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("TareasProfesor.aspx");
-        }
-
-        protected void validConexion()
-        {
-            if (Session["correo"] == null || !Session["tipo"].Equals("P"))
-                Response.Redirect("Inicio.aspx");
         }
         
     }

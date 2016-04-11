@@ -49,7 +49,8 @@ namespace Proyecto_HADS
             datos.Add("tipo", (rdAlumno.Checked)? "A":"P");
             datos.Add("grupo", (rdAlumno.Checked) ? tbGrupo.Text : null);
 
-            if (acceso.crearUsuario(datos))
+            string error = acceso.crearUsuario(datos);
+            if (error == null)
             {
                 string url = "confirmar.aspx?cod=" + codigo + "&usr=" + Server.UrlEncode(tbRegCorreo.Text);
                 mailSender.sendMail(tbRegCorreo.Text, "http://hads19.azurewebsites.net/" + url);
@@ -58,7 +59,7 @@ namespace Proyecto_HADS
             }
             else
             {
-                hyReg.Text = "El registro no es correcto";
+                hyReg.Text = "El registro no es correcto:  " + error;
                 
             }
 

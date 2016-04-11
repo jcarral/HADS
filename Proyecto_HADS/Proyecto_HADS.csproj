@@ -57,7 +57,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Alumno.aspx" />
+    <Content Include="alumno\Alumno.aspx" />
     <Content Include="App_Data\HAS.xml" />
     <Content Include="App_Data\SEG.xml" />
     <Content Include="App_Data\XSLTFile.xsl" />
@@ -65,28 +65,28 @@
     <Content Include="confirmar.aspx" />
     <Content Include="entrada.aspx" />
     <Content Include="estilo.css" />
-    <Content Include="ExportarTareas.aspx" />
+    <Content Include="profesor\ExportarTareas.aspx" />
     <Content Include="Global.asax" />
     <Content Include="header.ascx" />
-    <Content Include="ImportarTareasDS.aspx" />
-    <Content Include="ImportarTareasXML.aspx" />
+    <Content Include="profesor\ImportarTareasDS.aspx" />
+    <Content Include="profesor\ImportarTareasXML.aspx" />
     <Content Include="Inicio.aspx" />
-    <Content Include="InsertarTarea.aspx" />
-    <Content Include="InstanciarTarea.aspx" />
-    <Content Include="MenuAlumno.ascx" />
-    <Content Include="MenuProfesor.ascx" />
-    <Content Include="Profesor.aspx" />
+    <Content Include="profesor\InsertarTarea.aspx" />
+    <Content Include="alumno\InstanciarTarea.aspx" />
+    <Content Include="alumno\MenuAlumno.ascx" />
+    <Content Include="profesor\MenuProfesor.ascx" />
+    <Content Include="profesor\Profesor.aspx" />
     <Content Include="registro.aspx" />
-    <Content Include="TareasAlumno.aspx" />
-    <Content Include="TareasProfesor.aspx" />
+    <Content Include="alumno\TareasAlumno.aspx" />
+    <Content Include="profesor\TareasProfesor.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alumno.aspx.cs">
+    <Compile Include="alumno\Alumno.aspx.cs">
       <DependentUpon>Alumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Alumno.aspx.designer.cs">
+    <Compile Include="alumno\Alumno.aspx.designer.cs">
       <DependentUpon>Alumno.aspx</DependentUpon>
     </Compile>
     <Compile Include="CambiarPassword.aspx.cs">
@@ -110,11 +110,11 @@
     <Compile Include="entrada.aspx.designer.cs">
       <DependentUpon>entrada.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ExportarTareas.aspx.cs">
+    <Compile Include="profesor\ExportarTareas.aspx.cs">
       <DependentUpon>ExportarTareas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ExportarTareas.aspx.designer.cs">
+    <Compile Include="profesor\ExportarTareas.aspx.designer.cs">
       <DependentUpon>ExportarTareas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -127,18 +127,18 @@
     <Compile Include="header.ascx.designer.cs">
       <DependentUpon>header.ascx</DependentUpon>
     </Compile>
-    <Compile Include="ImportarTareasDS.aspx.cs">
+    <Compile Include="profesor\ImportarTareasDS.aspx.cs">
       <DependentUpon>ImportarTareasDS.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ImportarTareasDS.aspx.designer.cs">
+    <Compile Include="profesor\ImportarTareasDS.aspx.designer.cs">
       <DependentUpon>ImportarTareasDS.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ImportarTareasXML.aspx.cs">
+    <Compile Include="profesor\ImportarTareasXML.aspx.cs">
       <DependentUpon>ImportarTareasXML.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ImportarTareasXML.aspx.designer.cs">
+    <Compile Include="profesor\ImportarTareasXML.aspx.designer.cs">
       <DependentUpon>ImportarTareasXML.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
@@ -148,39 +148,39 @@
     <Compile Include="Inicio.aspx.designer.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
-    <Compile Include="InsertarTarea.aspx.cs">
+    <Compile Include="profesor\InsertarTarea.aspx.cs">
       <DependentUpon>InsertarTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="InsertarTarea.aspx.designer.cs">
+    <Compile Include="profesor\InsertarTarea.aspx.designer.cs">
       <DependentUpon>InsertarTarea.aspx</DependentUpon>
     </Compile>
-    <Compile Include="InstanciarTarea.aspx.cs">
+    <Compile Include="alumno\InstanciarTarea.aspx.cs">
       <DependentUpon>InstanciarTarea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="InstanciarTarea.aspx.designer.cs">
+    <Compile Include="alumno\InstanciarTarea.aspx.designer.cs">
       <DependentUpon>InstanciarTarea.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MenuAlumno.ascx.cs">
+    <Compile Include="alumno\MenuAlumno.ascx.cs">
       <DependentUpon>MenuAlumno.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MenuAlumno.ascx.designer.cs">
+    <Compile Include="alumno\MenuAlumno.ascx.designer.cs">
       <DependentUpon>MenuAlumno.ascx</DependentUpon>
     </Compile>
-    <Compile Include="MenuProfesor.ascx.cs">
+    <Compile Include="profesor\MenuProfesor.ascx.cs">
       <DependentUpon>MenuProfesor.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MenuProfesor.ascx.designer.cs">
+    <Compile Include="profesor\MenuProfesor.ascx.designer.cs">
       <DependentUpon>MenuProfesor.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Profesor.aspx.cs">
+    <Compile Include="profesor\Profesor.aspx.cs">
       <DependentUpon>Profesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profesor.aspx.designer.cs">
+    <Compile Include="profesor\Profesor.aspx.designer.cs">
       <DependentUpon>Profesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -191,18 +191,18 @@
     <Compile Include="registro.aspx.designer.cs">
       <DependentUpon>registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TareasAlumno.aspx.cs">
+    <Compile Include="alumno\TareasAlumno.aspx.cs">
       <DependentUpon>TareasAlumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TareasAlumno.aspx.designer.cs">
+    <Compile Include="alumno\TareasAlumno.aspx.designer.cs">
       <DependentUpon>TareasAlumno.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TareasProfesor.aspx.cs">
+    <Compile Include="profesor\TareasProfesor.aspx.cs">
       <DependentUpon>TareasProfesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TareasProfesor.aspx.designer.cs">
+    <Compile Include="profesor\TareasProfesor.aspx.designer.cs">
       <DependentUpon>TareasProfesor.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

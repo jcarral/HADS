@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TareasProfesor.aspx.cs" Inherits="Proyecto_HADS.TareasProfesor" %>
 
 <%@ Register Src="~/header.ascx" TagPrefix="uc1" TagName="header" %>
-<%@ Register Src="~/MenuProfesor.ascx" TagPrefix="uc1" TagName="MenuProfesor" %>
+<%@ Register Src="~/profesor/MenuProfesor.ascx" TagPrefix="uc1" TagName="MenuProfesor" %>
 
 
 
@@ -11,7 +11,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tareas Profesor</title>
-    <link href="estilo.css" rel="stylesheet" />
+    <link href="../estilo.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
@@ -46,7 +46,7 @@
         </asp:DropDownList>
         <br />
         <br />
-        <asp:Button ID="btnInsertar" runat="server" CssClass="btn btn-info" PostBackUrl="~/InsertarTarea.aspx" Text="Insertar nueva tarea" Width="175px" />
+        <asp:Button ID="btnInsertar" runat="server" CssClass="btn btn-info" PostBackUrl="~/profesor/InsertarTarea.aspx" Text="Insertar nueva tarea" Width="175px" />
         <br />
         <asp:GridView ID="GridView1" CssClass="table table-hover" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Codigo" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" AllowSorting="True">
             
