@@ -69,7 +69,7 @@
             <br />
             <asp:Label ID="Label9" runat="server" Text="Tipo: "></asp:Label>
             <asp:RadioButton ID="rdAlumno" runat="server" Checked="True" GroupName="radiosTipo" Text="Alumno" />
-            <asp:RadioButton ID="rdProfesor" runat="server" Text="Profesor" ValidationGroup="radiosTipo" />
+            <asp:RadioButton ID="rdProfesor" runat="server" Text="Profesor" GroupName="radiosTipo" />
             <br />
             <asp:Label ID="Label10" runat="server" Text="Grupo: "></asp:Label>
             <asp:TextBox ID="tbGrupo" runat="server" TextMode="Number" Width="52px"></asp:TextBox>

@@ -38,6 +38,7 @@ namespace Proyecto_HADS
             
             Dictionary<string, string> datos = new Dictionary<string, string>();
             int codigo = generarCodigo();
+            
             datos.Add("correo", tbRegCorreo.Text);
             datos.Add("nombre", tbRegNombre.Text);
             datos.Add("apellido", tbRegApellido.Text);
@@ -47,7 +48,7 @@ namespace Proyecto_HADS
             datos.Add("respuesta", tbRegRespuesta.Text);
             datos.Add("dni", tbRegDNI.Text);
             datos.Add("tipo", (rdAlumno.Checked)? "A":"P");
-            datos.Add("grupo", (rdAlumno.Checked) ? tbGrupo.Text : null);
+            datos.Add("grupo", (rdAlumno.Checked) ? tbGrupo.Text : "0");
 
             string error = acceso.crearUsuario(datos);
             if (error == null)

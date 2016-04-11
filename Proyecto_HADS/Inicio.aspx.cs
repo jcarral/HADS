@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AccesoDatos;
+using System.Web.Security;
 
 namespace Proyecto_HADS
 {
@@ -18,7 +19,7 @@ namespace Proyecto_HADS
         {
             redireccionar();
             string result = acceso.conectar();
-            
+
 
         }
 
@@ -34,12 +35,23 @@ namespace Proyecto_HADS
             {
                 Session["correo"] = tbLogInCorreo.Text;
                 Session["tipo"] = "P";
+                if (tbLogInCorreo.Text.Equals("vadillo@ehu.es"))
+                {
+                    FormsAuthentication.SetAuthCookie("vadillo@ehu.es", true);
+                }
+                else
+                {
+                    FormsAuthentication.SetAuthCookie("profesor", true);
+                }
+
+
                 Response.Redirect("profesor/Profesor.aspx");
             }
             else if (tipo == ALUMNO)
             {
                 Session["correo"] = tbLogInCorreo.Text;
                 Session["tipo"] = "A";
+                FormsAuthentication.SetAuthCookie("alumno", true);
                 Response.Redirect("alumno/Alumno.aspx");
             }
             else
@@ -51,9 +63,9 @@ namespace Proyecto_HADS
 
         private void redireccionar()
         {
-            if (Session["tipo"]!= null && ((string)Session["tipo"]).Equals("P"))
+            if (Session["tipo"] != null && ((string)Session["tipo"]).Equals("P"))
                 Response.Redirect("Profesor.aspx");
-            else if (Session["tipo"]!= null && ((string)Session["tipo"]).Equals("A"))
+            else if (Session["tipo"] != null && ((string)Session["tipo"]).Equals("A"))
                 Response.Redirect("Alumno.aspx");
 
         }
