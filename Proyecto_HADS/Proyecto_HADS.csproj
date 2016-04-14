@@ -79,7 +79,9 @@
     <Content Include="registro.aspx" />
     <Content Include="alumno\TareasAlumno.aspx" />
     <Content Include="profesor\TareasProfesor.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="alumno\Alumno.aspx.cs">
@@ -212,8 +214,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\hads19 - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\hads19 - FTP %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\hads19 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\hads19 - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\hads19 - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\hads19 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
