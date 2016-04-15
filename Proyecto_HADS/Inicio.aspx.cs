@@ -44,7 +44,7 @@ namespace Proyecto_HADS
                     FormsAuthentication.SetAuthCookie("profesor", true);
                 }
 
-
+                ((LinkedList<string>)Application.Contents["profesores"]).AddLast(tbLogInCorreo.Text);
                 Response.Redirect("profesor/Profesor.aspx");
             }
             else if (tipo == ALUMNO)
@@ -52,6 +52,7 @@ namespace Proyecto_HADS
                 Session["correo"] = tbLogInCorreo.Text;
                 Session["tipo"] = "A";
                 FormsAuthentication.SetAuthCookie("alumno", true);
+                ((LinkedList<string>)Application.Contents["alumnos"]).AddLast(tbLogInCorreo.Text);
                 Response.Redirect("alumno/Alumno.aspx");
             }
             else

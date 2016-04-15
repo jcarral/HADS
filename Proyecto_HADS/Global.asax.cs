@@ -14,6 +14,9 @@ namespace Proyecto_HADS
         protected void Application_Start(object sender, EventArgs e)
         {
             Application.Contents["numerosocios"] = 0;
+            Application.Contents["alumnos"] = new LinkedList<string>();
+            Application.Contents["profesores"] = new LinkedList<string>();
+
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -46,7 +49,16 @@ namespace Proyecto_HADS
         protected void Session_End(object sender, EventArgs e)
         {
             Application.Lock();
-            int ns = (int) Application.Contents["numerosocios"] -1;
+            int ns = (int) Application.Contents["numerosocios"] - 1;
+            if (((string)Session["tipo"]).Equals("P"))
+            {
+                ((LinkedList<string>)Application.Contents["alumnos"]).Remove((string)Session["correo"]);
+            }
+            else if (((string)Session["tipo"]).Equals("A"))
+            {
+                ((LinkedList<string>)Application.Contents["profesores"]).Remove((string)Session["correo"]);
+            }
+            
             Application.Contents["numerosocios"] = ns;
             Application.UnLock();
         }

@@ -22,10 +22,16 @@
     <div>
     
     </div>
-    </form>
     <div style="text-align: center"><h1>GESTIÓN WEB DE TAREAS-DEDICACIÓN</h1>
         <br />
         <h1>PROFESORES</h1>
         </div>
-</body>
+        <asp:GridView ID="GridView1" runat="server">
+        </asp:GridView>
+        <asp:Timer ID="Timer1" runat="server" Interval="1000">
+        </asp:Timer>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+    </form>
+    </body>
 </html>
