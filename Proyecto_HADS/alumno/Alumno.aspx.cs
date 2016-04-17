@@ -12,7 +12,13 @@ namespace Proyecto_HADS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            ListBox2.DataSource = Application.Contents["alumnos"];
+            ListBox2.DataBind();
+            ListBox1.DataSource = Application.Contents["profesores"];
+            ListBox1.DataBind();
+
+            lblEstudiantes.Text = ((LinkedList<string>)Application.Contents["alumnos"]).Count.ToString();
+            lblProfesores.Text = ((LinkedList<string>)Application.Contents["profesores"]).Count.ToString();
         }
 
         

@@ -50,11 +50,11 @@ namespace Proyecto_HADS
         {
             Application.Lock();
             int ns = (int) Application.Contents["numerosocios"] - 1;
-            if (((string)Session["tipo"]).Equals("P"))
+            if (((string)Session["tipo"]).Equals("A"))
             {
                 ((LinkedList<string>)Application.Contents["alumnos"]).Remove((string)Session["correo"]);
             }
-            else if (((string)Session["tipo"]).Equals("A"))
+            else if (((string)Session["tipo"]).Equals("P"))
             {
                 ((LinkedList<string>)Application.Contents["profesores"]).Remove((string)Session["correo"]);
             }

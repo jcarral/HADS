@@ -5,6 +5,10 @@
 
 
 
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
+
+
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -24,14 +28,32 @@
     </div>
     <div style="text-align: center"><h1>GESTIÓN WEB DE TAREAS-DEDICACIÓN</h1>
         <br />
-        <h1>PROFESORES</h1>
+        <h1>PROFESORES
+        </h1>
         </div>
-        <asp:GridView ID="GridView1" runat="server">
-        </asp:GridView>
-        <asp:Timer ID="Timer1" runat="server" Interval="1000">
-        </asp:Timer>
         <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
+            </asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div class="online-list">
+                    <h3 class="online-title">Alumnos online</h3>
+                    <asp:ListBox ID="ListBox2" runat="server" CssClass="list-group" Width="240px"></asp:ListBox>
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text="Número de estudiantes: "></asp:Label>
+                <asp:Label ID="lblEstudiantes" runat="server" Text="0" CssClass="badge"></asp:Label>
+                </div>
+                <div class="online-list">
+                    <h3 class="online-title">Profesores online</h3>
+                     <asp:ListBox ID="ListBox1" runat="server" Width="240px"></asp:ListBox>
+                    <br />
+                    <asp:Label ID="Label2" runat="server" Text="Número de profesores: "></asp:Label>
+                <asp:Label ID="lblProfesores" runat="server" Text="0" CssClass="badge"></asp:Label>
+                </div>
+                <br />
+                <asp:Timer ID="Timer1" runat="server" Interval="4000">
+                </asp:Timer>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
     </body>
 </html>

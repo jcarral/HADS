@@ -45,7 +45,7 @@ namespace Proyecto_HADS
                 }
 
                 ((LinkedList<string>)Application.Contents["profesores"]).AddLast(tbLogInCorreo.Text);
-                Response.Redirect("profesor/Profesor.aspx");
+                Response.Redirect("./profesor/Profesor.aspx");
             }
             else if (tipo == ALUMNO)
             {
