@@ -35,35 +35,41 @@ namespace Proyecto_HADS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
-            Dictionary<string, string> datos = new Dictionary<string, string>();
-            int codigo = generarCodigo();
-            
-            datos.Add("correo", tbRegCorreo.Text);
-            datos.Add("nombre", tbRegNombre.Text);
-            datos.Add("apellido", tbRegApellido.Text);
-            datos.Add("pass", tbRegPass.Text);
-            datos.Add("codigo", codigo.ToString());
-            datos.Add("pregunta", tbRegPregunta.Text);
-            datos.Add("respuesta", tbRegRespuesta.Text);
-            datos.Add("dni", tbRegDNI.Text);
-            datos.Add("tipo", (rdAlumno.Checked)? "A":"P");
-            datos.Add("grupo", (rdAlumno.Checked) ? tbGrupo.Text : "0");
-
-            string error = acceso.crearUsuario(datos);
-            if (error == null)
+            matriculas.Matriculas mat = new matriculas.Matriculas();
+            if (mat.comprobar(tbRegCorreo.Text).Equals("SI"))
             {
-                string url = "confirmar.aspx?cod=" + codigo + "&usr=" + Server.UrlEncode(tbRegCorreo.Text);
-                mailSender.sendMail(tbRegCorreo.Text, "http://hads19.azurewebsites.net/" + url);
-                hyReg.NavigateUrl = url;
-                hyReg.Text = "Para validar tu correo haz click aquí o revisa tu bandeja de entrada";
-            }
-            else
-            {
-                hyReg.Text = "El registro no es correcto:  " + error;
-                
-            }
+                Dictionary<string, string> datos = new Dictionary<string, string>();
+                int codigo = generarCodigo();
 
+                datos.Add("correo", tbRegCorreo.Text);
+                datos.Add("nombre", tbRegNombre.Text);
+                datos.Add("apellido", tbRegApellido.Text);
+                datos.Add("pass", tbRegPass.Text);
+                datos.Add("codigo", codigo.ToString());
+                datos.Add("pregunta", tbRegPregunta.Text);
+                datos.Add("respuesta", tbRegRespuesta.Text);
+                datos.Add("dni", tbRegDNI.Text);
+                datos.Add("tipo", (rdAlumno.Checked) ? "A" : "P");
+                datos.Add("grupo", (rdAlumno.Checked) ? tbGrupo.Text : "0");
+
+                string error = acceso.crearUsuario(datos);
+                if (error == null)
+                {
+                    string url = "confirmar.aspx?cod=" + codigo + "&usr=" + Server.UrlEncode(tbRegCorreo.Text);
+                    mailSender.sendMail(tbRegCorreo.Text, "http://hads19.azurewebsites.net/" + url);
+                    hyReg.NavigateUrl = url;
+                    hyReg.Text = "Para validar tu correo haz click aquí o revisa tu bandeja de entrada";
+                }
+                else
+                {
+                    hyReg.Text = "El registro no es correcto:  " + error;
+
+                }
+            }
+            else {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('No se puede registrar un alumno que no está matriculado');", true);
+
+            }
            
         }
     }

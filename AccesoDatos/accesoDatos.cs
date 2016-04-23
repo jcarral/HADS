@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Collections;
 
 namespace AccesoDatos
 {
@@ -151,5 +152,21 @@ namespace AccesoDatos
             }
             
         }
+
+        public int getMedia(string codAsig)
+        {
+            string query = "Select AVG(HReales) as media FROM EstudiantesTareas inner join TareasGenericas ON EstudiantesTareas.CodTarea = TareasGenericas.Codigo WHERE TareasGenericas.CodAsig=@codAsig";
+            comando = new SqlCommand(query, conexion);
+            comando.Parameters.Add("@codAsig", codAsig);
+            SqlDataReader data = comando.ExecuteReader();
+            data.Read();
+            if (data["media"] == DBNull.Value)
+                return 0;
+            else 
+                return (int)data["media"];
+
+        }
+
+
     }
 }

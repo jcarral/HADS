@@ -12,6 +12,7 @@
 <li><a href="./ImportarTareasXML.aspx">Importar XML</a></li>
         <li><a href="./ExportarTareas.aspx">Exportar</a></li>
         <li><a href="./ImportarTareasDS.aspx">Importar DataSet</a></li> 
+        <li><a href="./coordinador.aspx">Coordinador</a></li> 
     </ul>
   </div>
 </nav>
