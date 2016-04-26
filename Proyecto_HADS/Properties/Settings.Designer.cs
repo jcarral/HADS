@@ -32,5 +32,15 @@ namespace Proyecto_HADS.Properties {
                 return ((string)(this["Proyecto_HADS_matriculas_Matriculas"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://sw14.hol.es/ServiciosWeb/comprobarmatricula.php")]
+        public string Proyecto_HADS_matriculas1_Matriculas {
+            get {
+                return ((string)(this["Proyecto_HADS_matriculas1_Matriculas"]));
+            }
+        }
     }
 }

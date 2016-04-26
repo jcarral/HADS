@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="coordinador.aspx.cs" Inherits="Proyecto_HADS.profesor.coordinador" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Coordinador.aspx.cs" Inherits="Proyecto_HADS.profesor.Coordinador" %>
 
 <%@ Register Src="~/header.ascx" TagPrefix="uc1" TagName="header" %>
 <%@ Register Src="~/profesor/MenuProfesor.ascx" TagPrefix="uc1" TagName="MenuProfesor" %>
@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link href="../estilo.css" rel="stylesheet" />
@@ -29,6 +29,15 @@
 <br />
                 <asp:Label ID="Label1" runat="server" Text="Número de horas de media: "></asp:Label>
                 <asp:Label ID="lblHoras" runat="server" Text="-"></asp:Label>
+           
+        
+        <br />
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Profesores:"></asp:Label>
+        <asp:Label ID="lblNombres" runat="server" Text="Label"></asp:Label>
+        <br />
+        <asp:Label ID="Label3" runat="server" Text="Correos: "></asp:Label>
+        <asp:Label ID="lblCorreos" runat="server" Text="Label"></asp:Label>
            
         
     </div>

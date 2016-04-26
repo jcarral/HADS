@@ -35,7 +35,7 @@ namespace Proyecto_HADS
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            matriculas.Matriculas mat = new matriculas.Matriculas();
+            matriculas1.Matriculas mat = new matriculas1.Matriculas();
             if (mat.comprobar(tbRegCorreo.Text).Equals("SI"))
             {
                 Dictionary<string, string> datos = new Dictionary<string, string>();

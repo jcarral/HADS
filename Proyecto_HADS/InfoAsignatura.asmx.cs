@@ -7,21 +7,24 @@ using System.Web.Services;
 namespace Proyecto_HADS
 {
     /// <summary>
-    /// Descripción breve de MediaHoras
+    /// Descripción breve de InfoAsignatura
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente. 
     // [System.Web.Script.Services.ScriptService]
-    public class MediaHoras : System.Web.Services.WebService {
+    public class InfoAsignatura : System.Web.Services.WebService
+    {
 
         [WebMethod]
-        public int getMedia(string codAsig) {
+        public string getInfo(string codAsig)
+        {
             AccesoDatos.accesoDatos acceso = new AccesoDatos.accesoDatos();
             acceso.conectar();
-            int res = acceso.getMedia(codAsig);
+            string res = acceso.getAsignaturaInfo(codAsig);
             acceso.cerrarconexion();
+
             return res;
         }
     }

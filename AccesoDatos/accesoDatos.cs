@@ -167,6 +167,28 @@ namespace AccesoDatos
 
         }
 
+        public string getAsignaturaInfo(string codAsig)
+        {
+            string query = "Select p.email as correo, u.nombre FROM " +
+                "((GruposClase as g INNER JOIN ProfesoresGrupo as p ON p.codigogrupo=g.codigo)"+
+                " INNER JOIN Usuarios as u ON u.email=p.email)"+
+                "WHERE g.codigoasig=@codAsig GROUP BY p.email, u.nombre;";
+            comando = new SqlCommand(query, conexion);
+            comando.Parameters.Add("@codAsig", codAsig);
+            SqlDataReader data = comando.ExecuteReader();
+
+            string info;
+            string correos = "";
+            string nombres = "";
+            while (data.Read())
+            {
+                correos += data["correo"] + ", ";
+                nombres += data["nombre"] + ", ";
+                
+            }
+            info =  correos + " & " + nombres;
+            return info;
+        }
 
     }
 }

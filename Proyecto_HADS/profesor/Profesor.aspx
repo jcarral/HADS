@@ -5,9 +5,6 @@
 
 
 
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
-
-
 
 <!DOCTYPE html>
 
@@ -31,7 +28,7 @@
         <h1>PROFESORES
         </h1>
         </div>
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
+      <asp:ScriptManager ID="ScriptManager1" runat="server">
             </asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>

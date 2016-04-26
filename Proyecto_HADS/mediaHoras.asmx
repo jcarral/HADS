@@ -1,1 +1,1 @@
-﻿<%@ WebService Language="C#" CodeBehind="mediaHoras.asmx.cs" Class="Proyecto_HADS.mediaHoras" %>
+﻿<%@ WebService Language="C#" CodeBehind="MediaHoras.asmx.cs" Class="Proyecto_HADS.MediaHoras" %>

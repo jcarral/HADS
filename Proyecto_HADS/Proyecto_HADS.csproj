@@ -65,6 +65,9 @@
     <Content Include="confirmar.aspx" />
     <Content Include="entrada.aspx" />
     <Content Include="estilo.css" />
+    <Content Include="InfoAsignatura.asmx" />
+    <Content Include="mediaHoras.asmx" />
+    <Content Include="profesor\coordinador.aspx" />
     <Content Include="profesor\ExportarTareas.aspx" />
     <Content Include="Global.asax" />
     <Content Include="header.ascx" />
@@ -111,6 +114,21 @@
     </Compile>
     <Compile Include="entrada.aspx.designer.cs">
       <DependentUpon>entrada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InfoAsignatura.asmx.cs">
+      <DependentUpon>InfoAsignatura.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="mediaHoras.asmx.cs">
+      <DependentUpon>mediaHoras.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="profesor\coordinador.aspx.cs">
+      <DependentUpon>coordinador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profesor\coordinador.aspx.designer.cs">
+      <DependentUpon>coordinador.aspx</DependentUpon>
     </Compile>
     <Compile Include="profesor\ExportarTareas.aspx.cs">
       <DependentUpon>ExportarTareas.aspx</DependentUpon>
@@ -186,6 +204,11 @@
       <DependentUpon>Profesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="registro.aspx.cs">
       <DependentUpon>registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,6 +230,11 @@
     <Compile Include="profesor\TareasProfesor.aspx.designer.cs">
       <DependentUpon>TareasProfesor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Web References\matriculas1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\tareas.dtd" />
@@ -219,6 +247,15 @@
     <None Include="Properties\PublishProfiles\hads19 - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\hads19 - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\hads19 - Web Deploy.pubxml" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\matriculas1\comprobarmatricula.wsdl" />
+    <Content Include="Web References\matriculas1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -235,6 +272,25 @@
       <Project>{dce7f9aa-f131-41ec-960f-b8a42b0657d7}</Project>
       <Name>EnvioMail</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://sw14.hol.es/ServiciosWeb/comprobarmatricula.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\matriculas1\</RelPath>
+      <UpdateFromURL>http://sw14.hol.es/ServiciosWeb/comprobarmatricula.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Proyecto_HADS_matriculas1_Matriculas</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
